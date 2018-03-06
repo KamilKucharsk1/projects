@@ -1,0 +1,43 @@
+# Scramlber V.34 with LSFR
+
+
+
+data = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+output = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+#output[]
+
+length_data = int(len(data))
+print(length_data)
+
+length_output = 2^length_data -1 #dlugosc klucza
+
+#Potegi wielomianu 1 + x^18 + x^23
+x  = 23 -1
+x2 =18 -1
+
+for i in range(30):
+    output[i]=data[length_data-1]
+
+
+    if data[x] != data[x2]:
+        XOR = 1
+    else:
+        XOR = 0
+
+    for j in data:
+        data[length_data-1-j] = data[length_data-j-2]
+
+    data[0] = XOR
+
+    #print(i)
+
+    print(output[i])
+
+
+
+
+
+
+
+
+
